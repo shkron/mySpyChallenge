@@ -13,7 +13,7 @@ class Challenge: NSManagedObject, ManagedObjectType {
     @NSManaged var hint: String
     @NSManaged var latitude: Double
     @NSManaged var longitude: String
-    @NSManaged var photoHref: Double
+    @NSManaged var photoHref: String
     
     @NSManaged var creator: User
     @NSManaged var matches: Set<Match>
