@@ -21,6 +21,8 @@
 		E002878F263A06EC00C65841 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E002878D263A06EC00C65841 /* Main.storyboard */; };
 		E0028791263A06EC00C65841 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0028790263A06EC00C65841 /* Assets.xcassets */; };
 		E0028794263A06EC00C65841 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0028792263A06EC00C65841 /* LaunchScreen.storyboard */; };
+		E07E587B263C9EB10026F912 /* DataBrowserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E587A263C9EB10026F912 /* DataBrowserTableViewController.swift */; };
+		E07E587F263CAA760026F912 /* UIViewController+iSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E587E263CAA760026F912 /* UIViewController+iSpy.swift */; };
 		E089E980263A0A0F0054543D /* iSpyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E089E97F263A0A0F0054543D /* iSpyTabBarController.swift */; };
 		E089E988263A0C480054543D /* NewChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E089E986263A0C480054543D /* NewChallenge.storyboard */; };
 		E089E98C263A0C630054543D /* NearMe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E089E98B263A0C630054543D /* NearMe.storyboard */; };
@@ -51,6 +53,8 @@
 		E0028790263A06EC00C65841 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0028793263A06EC00C65841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0028795263A06EC00C65841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E07E587A263C9EB10026F912 /* DataBrowserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBrowserTableViewController.swift; sourceTree = "<group>"; };
+		E07E587E263CAA760026F912 /* UIViewController+iSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+iSpy.swift"; sourceTree = "<group>"; };
 		E089E97F263A0A0F0054543D /* iSpyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSpyTabBarController.swift; sourceTree = "<group>"; };
 		E089E987263A0C480054543D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iSpyChallenge/Base.lproj/NewChallenge.storyboard; sourceTree = "<group>"; };
 		E089E98B263A0C630054543D /* NearMe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NearMe.storyboard; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 				E0028795263A06EC00C65841 /* Info.plist */,
 				E0028787263A06EC00C65841 /* AppDelegate.swift */,
 				E0028789263A06EC00C65841 /* SceneDelegate.swift */,
+				E07E587D263CAA570026F912 /* Extensions */,
 				E089E994263A0D8A0054543D /* Persistency */,
 				E0028790263A06EC00C65841 /* Assets.xcassets */,
 				E0028792263A06EC00C65841 /* LaunchScreen.storyboard */,
@@ -132,6 +137,14 @@
 				E089E984263A0C100054543D /* Data Browser */,
 			);
 			path = iSpyChallenge;
+			sourceTree = "<group>";
+		};
+		E07E587D263CAA570026F912 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E07E587E263CAA760026F912 /* UIViewController+iSpy.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E089E982263A0BF70054543D /* New Challenge */ = {
@@ -154,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				E089E98F263A0C8E0054543D /* DataBrowser.storyboard */,
+				E07E587A263C9EB10026F912 /* DataBrowserTableViewController.swift */,
 			);
 			path = "Data Browser";
 			sourceTree = "<group>";
@@ -265,8 +279,10 @@
 				E0028788263A06EC00C65841 /* AppDelegate.swift in Sources */,
 				E089E9AB263A193B0054543D /* Match.swift in Sources */,
 				E089E99F263A173B0054543D /* ManagedObjectType.swift in Sources */,
+				E07E587B263C9EB10026F912 /* DataBrowserTableViewController.swift in Sources */,
 				E089E9A2263A17D20054543D /* User.swift in Sources */,
 				964DA683263A2EDB004D1B3B /* PhotoController.swift in Sources */,
+				E07E587F263CAA760026F912 /* UIViewController+iSpy.swift in Sources */,
 				E089E9AF263A1C710054543D /* DataController.swift in Sources */,
 				E089E9A8263A18DA0054543D /* Rating.swift in Sources */,
 				E089E980263A0A0F0054543D /* iSpyTabBarController.swift in Sources */,

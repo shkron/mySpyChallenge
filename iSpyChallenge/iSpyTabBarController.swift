@@ -11,8 +11,8 @@ class iSpyTabBarController: UITabBarController {
     private var dataController: DataController! {
         didSet {
             if let viewControllers = viewControllers {
-                for vc in viewControllers where vc is DataControllerInjectable {
-                    (vc as! DataControllerInjectable).dataController = dataController
+                for vc in viewControllers where vc.contentViewController is DataControllerInjectable {
+                    (vc.contentViewController as! DataControllerInjectable).dataController = dataController
                 }
             }
         }
