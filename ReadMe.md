@@ -36,7 +36,7 @@ The UI for the project consists of three tabs (New Challenge, Near Me, Data Brow
 
 ## Screen Shots
 
-![New Challenge](NewChallenge.png)
+![New Challenge](./NewChallenge.png)
 
 ![Near Me](NearMe.png)
 
