@@ -25,7 +25,7 @@
 		E07E587F263CAA760026F912 /* UIViewController+iSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E587E263CAA760026F912 /* UIViewController+iSpy.swift */; };
 		E07E58852641E4310026F912 /* iSpy App - Code Challenge.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E07E58832641E4310026F912 /* iSpy App - Code Challenge.pdf */; };
 		E07E58862641E4310026F912 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = E07E58842641E4310026F912 /* ReadMe.md */; };
-		E07E588B2641E6F20026F912 /* NewChallenge.png in Resources */ = {isa = PBXBuildFile; fileRef = E07E58892641E6F20026F912 /* NewChallenge.png */; };
+		E07E588B2641E6F20026F912 /* New_Challenge.png in Resources */ = {isa = PBXBuildFile; fileRef = E07E58892641E6F20026F912 /* New_Challenge.png */; };
 		E07E588C2641E6F20026F912 /* NearMe.png in Resources */ = {isa = PBXBuildFile; fileRef = E07E588A2641E6F20026F912 /* NearMe.png */; };
 		E089E980263A0A0F0054543D /* iSpyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E089E97F263A0A0F0054543D /* iSpyTabBarController.swift */; };
 		E089E988263A0C480054543D /* NewChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E089E986263A0C480054543D /* NewChallenge.storyboard */; };
@@ -61,7 +61,7 @@
 		E07E587E263CAA760026F912 /* UIViewController+iSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+iSpy.swift"; sourceTree = "<group>"; };
 		E07E58832641E4310026F912 /* iSpy App - Code Challenge.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "iSpy App - Code Challenge.pdf"; sourceTree = "<group>"; };
 		E07E58842641E4310026F912 /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
-		E07E58892641E6F20026F912 /* NewChallenge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewChallenge.png; sourceTree = "<group>"; };
+		E07E58892641E6F20026F912 /* New_Challenge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = New_Challenge.png; sourceTree = "<group>"; };
 		E07E588A2641E6F20026F912 /* NearMe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NearMe.png; sourceTree = "<group>"; };
 		E089E97F263A0A0F0054543D /* iSpyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSpyTabBarController.swift; sourceTree = "<group>"; };
 		E089E987263A0C480054543D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iSpyChallenge/Base.lproj/NewChallenge.storyboard; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 			children = (
 				E07E58842641E4310026F912 /* ReadMe.md */,
 				E07E588A2641E6F20026F912 /* NearMe.png */,
-				E07E58892641E6F20026F912 /* NewChallenge.png */,
+				E07E58892641E6F20026F912 /* New_Challenge.png */,
 				E07E58832641E4310026F912 /* iSpy App - Code Challenge.pdf */,
 				9660CD26263B2D0A006B9352 /* iSpySampleData */,
 				E0028786263A06EC00C65841 /* iSpyChallenge */,
@@ -278,7 +278,7 @@
 				9660CD33263B2D1E006B9352 /* galvanize.jpg in Resources */,
 				E07E58852641E4310026F912 /* iSpy App - Code Challenge.pdf in Resources */,
 				E089E988263A0C480054543D /* NewChallenge.storyboard in Resources */,
-				E07E588B2641E6F20026F912 /* NewChallenge.png in Resources */,
+				E07E588B2641E6F20026F912 /* New_Challenge.png in Resources */,
 				E089E991263A0C8E0054543D /* DataBrowser.storyboard in Resources */,
 				E07E588C2641E6F20026F912 /* NearMe.png in Resources */,
 			);
