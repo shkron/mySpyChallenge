@@ -4,7 +4,7 @@ This repository contains an Xcode project that is used as a starting point for t
 
 ## Process
 
-The goal of the challenge is to provide a springboard for you to be able to really demonstrate your core strengths.  During a four hour block of time you will be asked to build a portion of a small iOS application.  The Xcode project in this repo contains a starting point for your work. There are three tabs in the application. The first two are placeholders for  your work. The third tab contains a data browser for exploring the sample data included with the project.
+The goal of the challenge is to provide a springboard for you to be able to really demonstrate your core strengths.  During a three hour block of time you will be asked to build a portion of a small iOS application.  The Xcode project in this repo contains a starting point for your work. There are three tabs in the application. The first two are placeholders for  your work. The third tab contains a data browser for exploring the sample data included with the project.
 
 You may use your own computer system for this exercise.  
 
@@ -34,10 +34,4 @@ There are four users and six challenges in the sample data set.  The challenges 
 
 The UI for the project consists of three tabs (New Challenge, Near Me, Data Browser).  The first two are placeholders for your work and the third one provides a means to view the sample data included with the project.
 
-## Screen Shots
 
-![New Challenge](NewChallenge.png)
-
-![Near Me](NearMe.png)
-
-![Data Browser](DataBrowser.png)
