@@ -24,7 +24,7 @@ You will have 3 hours to work on the project.
 
 ## Xcode Project Overview
 
-The model objects for the app are provided, along with some sample data for use during the exercise. All data is maintained in an in-memory persistent store,and is reloaded each time the app is launched.
+The model objects for the app are provided, along with some sample data for use during the exercise.  All data is maintained in an in-memory persistent store, and is reloaded each time the app is launched.
  
 A helper class called PhotoController is provided to store and retrieve photos from a local directory.  The sample data set includes a number of challenges, each with a photo.
 
