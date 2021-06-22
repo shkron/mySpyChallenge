@@ -36,8 +36,8 @@ The UI for the project consists of three tabs (New Challenge, Near Me, Data Brow
 
 ## Screen Shots
 
-![New Challenge](NewChallenge.png | width=240)
+<kbd><img src="NewChallenge.png" alt="New Challenge" width="240"/>
 
-![Near Me](NearMe.png | width=240)
+<kbd><img src="NearMe.png" alt="Near Me" width="240"/>
 
-![Data Browser](DataBrowser.png | width=240)
+<kbd><img src="DataBrowser.png" alt="Data Browser" width="240"/>
