@@ -130,6 +130,10 @@ class UserTableViewController: UITableViewController, DataControllerInjectable, 
     // MARK: - Injection
     
     func injectProperties(viewController: UIViewController) {
+        if let vc = viewController as? ChallengesTableViewController {
+            vc.challenges = user?.challenges.sorted(by: { $0.hint < $1.hint }) ?? []
+        }
+        
         if let vc = viewController as? MatchesTableViewController {
             vc.matches = user?.matches.sorted(by: { !$0.verified || $1.verified }) ?? []
         }

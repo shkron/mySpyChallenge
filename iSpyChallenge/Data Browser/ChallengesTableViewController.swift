@@ -7,43 +7,27 @@
 import UIKit
 import CoreData
 
-class ChallengesTableViewController: FetchedTableViewController, DataControllerInjectable, PhotoControllerInjectable, UserInjectable {
-    
+class ChallengesTableViewController: UITableViewController, DataControllerInjectable, PhotoControllerInjectable {
     var dataController: DataController!
     var photoController: PhotoController!
-    var user: User?
+    var challenges: [Challenge] = []
     
-    private lazy var fetchedResultsController: NSFetchedResultsController<Challenge> = {
-        let fetchRequest: NSFetchRequest<Challenge> = Challenge.newFetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "creator = %@", self.user!)
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "hint", ascending: true)]
-        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.mainQueueManagedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-        controller.delegate = self
-        return controller
-    }()
-
-    // MARK: - View Controller Lifecycle
-    
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-
-        do {
-            try fetchedResultsController.performFetch()
-        } catch let error {
-            print(error)
-        }
-    }
-
     // MARK: - UITableViewDataSource & UITableViewDelegate
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        fetchedResultsController.sections?[section].numberOfObjects ?? 0
+        challenges.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChallengeCell", for: indexPath)
-        configure(cell, at: indexPath)
+        
+        if challenges.indices.contains(indexPath.row) {
+            let challenge = challenges[indexPath.row]
+            cell.textLabel?.text = challenge.hint
+            cell.detailTextLabel?.text = String(format: "(%.5f, %.5f)", challenge.latitude, challenge.longitude)
+            cell.imageView?.image = photoController.photo(withName: challenge.photoHref)
+        }
+        
         return cell
     }
     
@@ -51,20 +35,7 @@ class ChallengesTableViewController: FetchedTableViewController, DataControllerI
         performSegue(withIdentifier: "ShowChallenge", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
-    // MARK: - Configure Table View Cell
     
-    override func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {
-        let challenge = fetchedResultsController.object(at: indexPath)
-        cell.textLabel?.text = challenge.hint
-        cell.detailTextLabel?.text = String(format: "(%.5f, %.5f)", challenge.latitude, challenge.longitude)
-        if let thumbnail = photoController.photo(withName: challenge.photoHref) {
-            cell.imageView?.image = thumbnail
-        } else {
-            cell.imageView?.image = nil
-        }
-    }
-
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -82,9 +53,10 @@ class ChallengesTableViewController: FetchedTableViewController, DataControllerI
             vc.photoController = self.photoController
         }
         
-        if let vc = viewController as? ChallengeInjectable {
-            let challenge = fetchedResultsController.object(at: tableView.indexPathForSelectedRow!)
-            vc.challenge = challenge
+        if let vc = viewController as? ChallengeInjectable,
+           let row = tableView.indexPathForSelectedRow?.row,
+           challenges.indices.contains(row) {
+            vc.challenge = challenges[row]
         }
     }
 
