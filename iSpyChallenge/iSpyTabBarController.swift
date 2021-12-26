@@ -7,7 +7,6 @@ import UIKit
 import CoreData
 
 class iSpyTabBarController: UITabBarController {
-    
     private var dataController: DataController! {
         didSet {
             if let viewControllers = viewControllers {
@@ -28,12 +27,23 @@ class iSpyTabBarController: UITabBarController {
         }
     }
     
+    // MARK: - View Controllers
+    
+    private var dataBrowserViewController: DataBrowserTableViewController? {
+        viewControllers?
+            .compactMap { ($0 as? UINavigationController)?.viewControllers.first as? DataBrowserTableViewController }
+            .first
+    }
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         dataController = try! DataController.init(managedObjectModuleName: "iSpy", persistentStoreType: NSSQLiteStoreType, managedObjectModuleBundle: .main)
         
         photoController = try! PhotoController()
+        
+        dataBrowserViewController?.users = dataController.users
     }
 }

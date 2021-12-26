@@ -42,6 +42,17 @@ class DataController: NSObject {
         }
     }
     
+    // MARK: - Users
+    
+    lazy var users: [User] = {
+        let fetchRequest: NSFetchRequest<User> = User.newFetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "username", ascending: true)]
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: mainQueueManagedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        try? controller.performFetch()
+        
+        return controller.fetchedObjects ?? []
+    }()
+    
     // MARK: - Private State
     
     private lazy var applicationsDocumentsDirectory: URL = {
@@ -88,7 +99,7 @@ class DataController: NSObject {
     
     // MARK: - Managed Object Contexts
     
-    lazy var mainQueueManagedObjectContext: NSManagedObjectContext = {
+    private lazy var mainQueueManagedObjectContext: NSManagedObjectContext = {
         let moc = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         moc.parent = persistenceManagedObjectContext
         moc.name = "Main Queue Context"
