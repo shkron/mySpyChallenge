@@ -55,7 +55,7 @@ struct ChallengeViewModel {
     }
 }
 
-class ChallengeTableViewController: UITableViewController, PhotoControllerInjectable, ChallengeInjectable {
+class ChallengeTableViewController: UITableViewController, PhotoControllerInjectable {
     var dataController: DataController!
     var photoController: PhotoController!
     var challenge: Challenge?
@@ -142,10 +142,6 @@ class ChallengeTableViewController: UITableViewController, PhotoControllerInject
         
         if let vc = viewController as? PhotoControllerInjectable {
             vc.photoController = self.photoController
-        }
-        
-        if let vc = viewController as? ChallengeInjectable {
-            vc.challenge = self.challenge
         }
     }
 }

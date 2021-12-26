@@ -128,7 +128,7 @@ class MatchTableViewController: UITableViewController, PhotoControllerInjectable
             vc.photoController = self.photoController
         }
         
-        if let vc = viewController as? ChallengeInjectable {
+        if let vc = viewController as? ChallengeTableViewController {
             vc.challenge = self.match?.challenge
         }
         

@@ -49,7 +49,7 @@ class ChallengesTableViewController: UITableViewController, PhotoControllerInjec
             vc.photoController = self.photoController
         }
         
-        if let vc = viewController as? ChallengeInjectable,
+        if let vc = viewController as? ChallengeTableViewController,
            let row = tableView.indexPathForSelectedRow?.row,
            challenges.indices.contains(row) {
             vc.challenge = challenges[row]
