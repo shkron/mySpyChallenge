@@ -55,7 +55,7 @@ struct ChallengeViewModel {
     }
 }
 
-class ChallengeTableViewController: UITableViewController, DataControllerInjectable, PhotoControllerInjectable, ChallengeInjectable {
+class ChallengeTableViewController: UITableViewController, PhotoControllerInjectable, ChallengeInjectable {
     var dataController: DataController!
     var photoController: PhotoController!
     var challenge: Challenge?
@@ -134,10 +134,6 @@ class ChallengeTableViewController: UITableViewController, DataControllerInjecta
         
         if let vc = viewController as? RatingsTableViewController {
             vc.ratings = challenge?.ratings.sorted(by: { $0.stars < $1.stars }) ?? []
-        }
-        
-        if let vc = viewController as? DataControllerInjectable {
-            vc.dataController = self.dataController
         }
         
         if let vc = viewController as? PhotoControllerInjectable {

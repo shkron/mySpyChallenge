@@ -57,7 +57,7 @@ struct UserViewModel {
     }
 }
 
-class UserTableViewController: UITableViewController, DataControllerInjectable, PhotoControllerInjectable, UserInjectable {
+class UserTableViewController: UITableViewController, PhotoControllerInjectable, UserInjectable {
     var dataController: DataController!
     var photoController: PhotoController!
     var user: User?
@@ -140,10 +140,6 @@ class UserTableViewController: UITableViewController, DataControllerInjectable, 
         
         if let vc = viewController as? RatingsTableViewController {
             vc.ratings = user?.ratings.sorted(by: { $0.stars < $1.stars }) ?? []
-        }
-        
-        if let vc = viewController as? DataControllerInjectable {
-            vc.dataController = self.dataController
         }
         
         if let vc = viewController as? PhotoControllerInjectable {

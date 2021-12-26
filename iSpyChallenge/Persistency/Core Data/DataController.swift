@@ -6,10 +6,6 @@
 import CoreData
 import UIKit
 
-protocol DataControllerInjectable: AnyObject {
-    var dataController: DataController! { get set }
-}
-
 enum CoreDataStackError: Error {
     case invalidManagedObjectModuleName
     case unsupportedPersistentStoreType

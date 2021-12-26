@@ -6,7 +6,7 @@
 import UIKit
 import CoreData
 
-class DataBrowserTableViewController: UITableViewController, DataControllerInjectable, PhotoControllerInjectable {
+class DataBrowserTableViewController: UITableViewController, PhotoControllerInjectable {
     var dataController: DataController!
     var photoController: PhotoController!
     var users: [User] = []
@@ -50,10 +50,6 @@ class DataBrowserTableViewController: UITableViewController, DataControllerInjec
     // MARK: - Injection
     
     func injectProperties(viewController: UIViewController) {
-        if let vc = viewController as? DataControllerInjectable {
-            vc.dataController = self.dataController
-        }
-        
         if let vc = viewController as? PhotoControllerInjectable {
             vc.photoController = self.photoController
         }

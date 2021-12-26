@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class MatchesTableViewController: UITableViewController, DataControllerInjectable, PhotoControllerInjectable {
+class MatchesTableViewController: UITableViewController, PhotoControllerInjectable {
     var dataController: DataController!
     var photoController: PhotoController!
     var matches: [Match] = []
@@ -46,10 +46,6 @@ class MatchesTableViewController: UITableViewController, DataControllerInjectabl
     // MARK: - Injection
     
     func injectProperties(viewController: UIViewController) {
-        if let vc = viewController as? DataControllerInjectable {
-            vc.dataController = self.dataController
-        }
-        
         if let vc = viewController as? PhotoControllerInjectable {
             vc.photoController = self.photoController
         }
