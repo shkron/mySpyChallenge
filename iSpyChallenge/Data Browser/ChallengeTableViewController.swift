@@ -128,6 +128,10 @@ class ChallengeTableViewController: UITableViewController, PhotoControllerInject
     // MARK: - Injection
     
     func injectProperties(viewController: UIViewController) {
+        if let vc = viewController as? UserTableViewController {
+            vc.user = self.challenge?.creator
+        }
+        
         if let vc = viewController as? MatchesTableViewController {
             vc.matches = challenge?.matches.sorted(by: { !$0.verified || $1.verified }) ?? []
         }
@@ -140,13 +144,8 @@ class ChallengeTableViewController: UITableViewController, PhotoControllerInject
             vc.photoController = self.photoController
         }
         
-        if let vc = viewController as? UserInjectable {
-            vc.user = self.challenge?.creator
-        }
-        
         if let vc = viewController as? ChallengeInjectable {
             vc.challenge = self.challenge
         }
     }
-
 }

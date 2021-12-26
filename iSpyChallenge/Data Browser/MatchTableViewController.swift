@@ -132,10 +132,8 @@ class MatchTableViewController: UITableViewController, PhotoControllerInjectable
             vc.challenge = self.match?.challenge
         }
         
-        if let vc = viewController as? UserInjectable {
-            vc.user
-                = self.match?.player
+        if let vc = viewController as? UserTableViewController {
+            vc.user = self.match?.player
         }
     }
-
 }

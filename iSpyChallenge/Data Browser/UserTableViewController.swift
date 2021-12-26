@@ -57,7 +57,7 @@ struct UserViewModel {
     }
 }
 
-class UserTableViewController: UITableViewController, PhotoControllerInjectable, UserInjectable {
+class UserTableViewController: UITableViewController, PhotoControllerInjectable {
     var dataController: DataController!
     var photoController: PhotoController!
     var user: User?
@@ -144,10 +144,6 @@ class UserTableViewController: UITableViewController, PhotoControllerInjectable,
         
         if let vc = viewController as? PhotoControllerInjectable {
             vc.photoController = self.photoController
-        }
-        
-        if let vc = viewController as? UserInjectable {
-            vc.user = user
         }
     }
 }
