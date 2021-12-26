@@ -53,7 +53,7 @@ struct MatchViewModel {
     }
 }
 
-class MatchTableViewController: UITableViewController, PhotoControllerInjectable {
+class MatchTableViewController: UITableViewController {
     var photoController: PhotoController!
     var match: Match?
     var viewModel: MatchViewModel?
@@ -123,16 +123,14 @@ class MatchTableViewController: UITableViewController, PhotoControllerInjectable
     // MARK: - Injection
     
     func injectProperties(viewController: UIViewController) {
-        if let vc = viewController as? PhotoControllerInjectable {
-            vc.photoController = self.photoController
-        }
-        
         if let vc = viewController as? ChallengeTableViewController {
-            vc.challenge = self.match?.challenge
+            vc.photoController = photoController
+            vc.challenge = match?.challenge
         }
         
         if let vc = viewController as? UserTableViewController {
-            vc.user = self.match?.player
+            vc.photoController = photoController
+            vc.user = match?.player
         }
     }
 }

@@ -57,7 +57,7 @@ struct UserViewModel {
     }
 }
 
-class UserTableViewController: UITableViewController, PhotoControllerInjectable {
+class UserTableViewController: UITableViewController {
     var photoController: PhotoController!
     var user: User?
     var viewModel: UserViewModel?
@@ -130,19 +130,17 @@ class UserTableViewController: UITableViewController, PhotoControllerInjectable 
     
     func injectProperties(viewController: UIViewController) {
         if let vc = viewController as? ChallengesTableViewController {
+            vc.photoController = photoController
             vc.challenges = user?.challenges.sorted(by: { $0.hint < $1.hint }) ?? []
         }
         
         if let vc = viewController as? MatchesTableViewController {
+            vc.photoController = photoController
             vc.matches = user?.matches.sorted(by: { !$0.verified || $1.verified }) ?? []
         }
         
         if let vc = viewController as? RatingsTableViewController {
             vc.ratings = user?.ratings.sorted(by: { $0.stars < $1.stars }) ?? []
-        }
-        
-        if let vc = viewController as? PhotoControllerInjectable {
-            vc.photoController = self.photoController
         }
     }
 }

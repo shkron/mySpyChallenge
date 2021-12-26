@@ -7,7 +7,7 @@
 import UIKit
 import CoreData
 
-class ChallengesTableViewController: UITableViewController, PhotoControllerInjectable {
+class ChallengesTableViewController: UITableViewController {
     var photoController: PhotoController!
     var challenges: [Challenge] = []
     
@@ -44,14 +44,13 @@ class ChallengesTableViewController: UITableViewController, PhotoControllerInjec
     // MARK: - Injection
     
     func injectProperties(viewController: UIViewController) {
-        if let vc = viewController as? PhotoControllerInjectable {
-            vc.photoController = self.photoController
-        }
-        
-        if let vc = viewController as? ChallengeTableViewController,
-           let row = tableView.indexPathForSelectedRow?.row,
-           challenges.indices.contains(row) {
-            vc.challenge = challenges[row]
+        if let vc = viewController as? ChallengeTableViewController {
+            vc.photoController = photoController
+            
+            if let row = tableView.indexPathForSelectedRow?.row,
+               challenges.indices.contains(row) {
+                vc.challenge = challenges[row]
+            }
         }
     }
 

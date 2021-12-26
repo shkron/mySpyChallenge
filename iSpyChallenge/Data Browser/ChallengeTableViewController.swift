@@ -55,7 +55,7 @@ struct ChallengeViewModel {
     }
 }
 
-class ChallengeTableViewController: UITableViewController, PhotoControllerInjectable {
+class ChallengeTableViewController: UITableViewController {
     var photoController: PhotoController!
     var challenge: Challenge?
     var viewModel: ChallengeViewModel?
@@ -128,19 +128,17 @@ class ChallengeTableViewController: UITableViewController, PhotoControllerInject
     
     func injectProperties(viewController: UIViewController) {
         if let vc = viewController as? UserTableViewController {
+            vc.photoController = photoController
             vc.user = self.challenge?.creator
         }
         
         if let vc = viewController as? MatchesTableViewController {
+            vc.photoController = photoController
             vc.matches = challenge?.matches.sorted(by: { !$0.verified || $1.verified }) ?? []
         }
         
         if let vc = viewController as? RatingsTableViewController {
             vc.ratings = challenge?.ratings.sorted(by: { $0.stars < $1.stars }) ?? []
-        }
-        
-        if let vc = viewController as? PhotoControllerInjectable {
-            vc.photoController = self.photoController
         }
     }
 }

@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class MatchesTableViewController: UITableViewController, PhotoControllerInjectable {
+class MatchesTableViewController: UITableViewController {
     var photoController: PhotoController!
     var matches: [Match] = []
     
@@ -45,14 +45,13 @@ class MatchesTableViewController: UITableViewController, PhotoControllerInjectab
     // MARK: - Injection
     
     func injectProperties(viewController: UIViewController) {
-        if let vc = viewController as? PhotoControllerInjectable {
-            vc.photoController = self.photoController
-        }
-        
-        if let vc = viewController as? MatchTableViewController,
-           let row = tableView.indexPathForSelectedRow?.row,
-           matches.indices.contains(row) {
-            vc.match = matches[row]
+        if let vc = viewController as? MatchTableViewController {
+            vc.photoController = photoController
+            
+            if let row = tableView.indexPathForSelectedRow?.row,
+               matches.indices.contains(row) {
+                vc.match = matches[row]
+            }
         }
     }
 }

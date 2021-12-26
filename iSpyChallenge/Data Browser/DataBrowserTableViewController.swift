@@ -6,7 +6,7 @@
 import UIKit
 import CoreData
 
-class DataBrowserTableViewController: UITableViewController, PhotoControllerInjectable {
+class DataBrowserTableViewController: UITableViewController {
     var photoController: PhotoController!
     var users: [User] = []
     
@@ -49,14 +49,13 @@ class DataBrowserTableViewController: UITableViewController, PhotoControllerInje
     // MARK: - Injection
     
     func injectProperties(viewController: UIViewController) {
-        if let vc = viewController as? PhotoControllerInjectable {
-            vc.photoController = self.photoController
-        }
-        
-        if let vc = viewController as? UserTableViewController,
-           let row = tableView.indexPathForSelectedRow?.row,
-           users.indices.contains(row) {
-            vc.user = users[row]
+        if let vc = viewController as? UserTableViewController {
+            vc.photoController = photoController
+            
+            if let row = tableView.indexPathForSelectedRow?.row,
+               users.indices.contains(row) {
+                vc.user = users[row]
+            }
         }
     }
 }
