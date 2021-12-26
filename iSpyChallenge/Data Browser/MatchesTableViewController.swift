@@ -50,7 +50,7 @@ class MatchesTableViewController: UITableViewController, PhotoControllerInjectab
             vc.photoController = self.photoController
         }
         
-        if let vc = viewController as? MatchInjectable,
+        if let vc = viewController as? MatchTableViewController,
            let row = tableView.indexPathForSelectedRow?.row,
            matches.indices.contains(row) {
             vc.match = matches[row]
