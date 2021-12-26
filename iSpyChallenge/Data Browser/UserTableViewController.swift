@@ -58,7 +58,6 @@ struct UserViewModel {
 }
 
 class UserTableViewController: UITableViewController, PhotoControllerInjectable {
-    var dataController: DataController!
     var photoController: PhotoController!
     var user: User?
     var viewModel: UserViewModel?

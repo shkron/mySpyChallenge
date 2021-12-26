@@ -56,7 +56,6 @@ struct ChallengeViewModel {
 }
 
 class ChallengeTableViewController: UITableViewController, PhotoControllerInjectable {
-    var dataController: DataController!
     var photoController: PhotoController!
     var challenge: Challenge?
     var viewModel: ChallengeViewModel?

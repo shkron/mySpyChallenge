@@ -8,7 +8,6 @@ import UIKit
 import CoreData
 
 class ChallengesTableViewController: UITableViewController, PhotoControllerInjectable {
-    var dataController: DataController!
     var photoController: PhotoController!
     var challenges: [Challenge] = []
     

@@ -7,7 +7,6 @@ import UIKit
 import CoreData
 
 class DataBrowserTableViewController: UITableViewController, PhotoControllerInjectable {
-    var dataController: DataController!
     var photoController: PhotoController!
     var users: [User] = []
     

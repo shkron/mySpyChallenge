@@ -9,7 +9,6 @@ import UIKit
 import CoreData
 
 class MatchesTableViewController: UITableViewController, PhotoControllerInjectable {
-    var dataController: DataController!
     var photoController: PhotoController!
     var matches: [Match] = []
     

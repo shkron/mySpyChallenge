@@ -54,7 +54,6 @@ struct MatchViewModel {
 }
 
 class MatchTableViewController: UITableViewController, PhotoControllerInjectable {
-    var dataController: DataController!
     var photoController: PhotoController!
     var match: Match?
     var viewModel: MatchViewModel?
