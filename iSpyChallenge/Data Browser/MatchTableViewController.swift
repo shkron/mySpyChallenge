@@ -72,13 +72,12 @@ class MatchTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let section = viewModel?.sections[section]
-        return section?.rows.count ?? 0
+        viewModel?.sections[safe: section]?.rows.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section = viewModel?.sections[indexPath.section]
-        let row = section?.rows[indexPath.row]
+        let section = viewModel?.sections[safe: indexPath.section]
+        let row = section?.rows[safe: indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MatchCell")!
         cell.textLabel?.text = row?.title
@@ -95,13 +94,13 @@ class MatchTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let section = viewModel?.sections[section]
-        return section?.type.rawValue
+        viewModel?.sections[safe: section]?.type.rawValue
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let section = viewModel?.sections[indexPath.section]
-        let row = section?.rows[indexPath.row]
+        let row = viewModel?
+            .sections[safe: indexPath.section]?
+            .rows[safe: indexPath.row]
         
         switch row?.type {
         case .challenge:
