@@ -19,8 +19,7 @@ class DataBrowserTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath)
         
-        if users.indices.contains(indexPath.row) {
-            let user = users[indexPath.row]
+        if let user = users[safe: indexPath.row] {
             cell.textLabel?.text = user.username
             cell.detailTextLabel?.text = user.email
             
@@ -51,11 +50,7 @@ class DataBrowserTableViewController: UITableViewController {
     func injectProperties(viewController: UIViewController) {
         if let vc = viewController as? UserTableViewController {
             vc.photoController = photoController
-            
-            if let row = tableView.indexPathForSelectedRow?.row,
-               users.indices.contains(row) {
-                vc.user = users[row]
-            }
+            vc.user = users[safe: tableView.indexPathForSelectedRow?.row]
         }
     }
 }

@@ -20,8 +20,7 @@ class ChallengesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChallengeCell", for: indexPath)
         
-        if challenges.indices.contains(indexPath.row) {
-            let challenge = challenges[indexPath.row]
+        if let challenge = challenges[safe: indexPath.row] {
             cell.textLabel?.text = challenge.hint
             cell.detailTextLabel?.text = String(format: "(%.5f, %.5f)", challenge.latitude, challenge.longitude)
             cell.imageView?.image = photoController.photo(withName: challenge.photoHref)
@@ -46,12 +45,7 @@ class ChallengesTableViewController: UITableViewController {
     func injectProperties(viewController: UIViewController) {
         if let vc = viewController as? ChallengeTableViewController {
             vc.photoController = photoController
-            
-            if let row = tableView.indexPathForSelectedRow?.row,
-               challenges.indices.contains(row) {
-                vc.challenge = challenges[row]
-            }
+            vc.challenge = challenges[safe: tableView.indexPathForSelectedRow?.row]
         }
     }
-
 }

@@ -20,8 +20,7 @@ class RatingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RatingCell", for: indexPath)
         
-        if ratings.indices.contains(indexPath.row) {
-            let rating = ratings[indexPath.row]
+        if let rating = ratings[safe: indexPath.row] {
             cell.textLabel?.text = String(format: "%i", rating.stars)
             cell.detailTextLabel?.text = rating.player.username
         }
