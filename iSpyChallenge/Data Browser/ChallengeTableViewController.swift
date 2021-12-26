@@ -128,6 +128,10 @@ class ChallengeTableViewController: UITableViewController, DataControllerInjecta
     // MARK: - Injection
     
     func injectProperties(viewController: UIViewController) {
+        if let vc = viewController as? RatingsTableViewController {
+            vc.ratings = challenge?.ratings.sorted(by: { $0.stars < $1.stars }) ?? []
+        }
+        
         if let vc = viewController as? DataControllerInjectable {
             vc.dataController = self.dataController
         }

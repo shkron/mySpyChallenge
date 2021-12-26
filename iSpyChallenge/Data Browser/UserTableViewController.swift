@@ -130,6 +130,10 @@ class UserTableViewController: UITableViewController, DataControllerInjectable, 
     // MARK: - Injection
     
     func injectProperties(viewController: UIViewController) {
+        if let vc = viewController as? RatingsTableViewController {
+            vc.ratings = user?.ratings.sorted(by: { $0.stars < $1.stars }) ?? []
+        }
+        
         if let vc = viewController as? DataControllerInjectable {
             vc.dataController = self.dataController
         }
