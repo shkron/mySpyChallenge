@@ -34,7 +34,6 @@
 		E0028791263A06EC00C65841 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0028790263A06EC00C65841 /* Assets.xcassets */; };
 		E0028794263A06EC00C65841 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0028792263A06EC00C65841 /* LaunchScreen.storyboard */; };
 		E07E587B263C9EB10026F912 /* DataBrowserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E587A263C9EB10026F912 /* DataBrowserTableViewController.swift */; };
-		E07E587F263CAA760026F912 /* UIViewController+iSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E587E263CAA760026F912 /* UIViewController+iSpy.swift */; };
 		E07E58852641E4310026F912 /* iSpy App - Code Challenge.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E07E58832641E4310026F912 /* iSpy App - Code Challenge.pdf */; };
 		E07E58862641E4310026F912 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = E07E58842641E4310026F912 /* ReadMe.md */; };
 		E07E588B2641E6F20026F912 /* NewChallenge.png in Resources */ = {isa = PBXBuildFile; fileRef = E07E58892641E6F20026F912 /* NewChallenge.png */; };
@@ -82,7 +81,6 @@
 		E0028793263A06EC00C65841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0028795263A06EC00C65841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E07E587A263C9EB10026F912 /* DataBrowserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBrowserTableViewController.swift; sourceTree = "<group>"; };
-		E07E587E263CAA760026F912 /* UIViewController+iSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+iSpy.swift"; sourceTree = "<group>"; };
 		E07E58832641E4310026F912 /* iSpy App - Code Challenge.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "iSpy App - Code Challenge.pdf"; sourceTree = "<group>"; };
 		E07E58842641E4310026F912 /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		E07E58892641E6F20026F912 /* NewChallenge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewChallenge.png; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 		E07E587D263CAA570026F912 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E07E587E263CAA760026F912 /* UIViewController+iSpy.swift */,
 				3E5D324D2778230B004D1516 /* Collection+iSpy.swift */,
 			);
 			path = Extensions;
@@ -349,7 +346,6 @@
 				96ABE8022640CFF20045C456 /* UserResult.swift in Sources */,
 				E089E9A2263A17D20054543D /* User.swift in Sources */,
 				964DA683263A2EDB004D1B3B /* PhotoController.swift in Sources */,
-				E07E587F263CAA760026F912 /* UIViewController+iSpy.swift in Sources */,
 				E089E9AF263A1C710054543D /* DataController.swift in Sources */,
 				E089E9A8263A18DA0054543D /* Rating.swift in Sources */,
 				968A15DA264216C10017D10B /* RatingsTableViewController.swift in Sources */,
