@@ -2,7 +2,6 @@
 //  Collection+iSpy.swift
 //  iSpyChallenge
 //
-//  Created by Alex Scharch on 12/25/21.
 //
 
 import Foundation
