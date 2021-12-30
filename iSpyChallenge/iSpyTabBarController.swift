@@ -7,33 +7,26 @@ import UIKit
 import CoreData
 
 class iSpyTabBarController: UITabBarController {
+    private let dataController = try! DataController(managedObjectModuleName: "iSpy",
+                                                     persistentStoreType: NSSQLiteStoreType,
+                                                     managedObjectModuleBundle: .main)
     
-    private var dataController: DataController! {
-        didSet {
-            if let viewControllers = viewControllers {
-                for vc in viewControllers where vc.contentViewController is DataControllerInjectable {
-                    (vc.contentViewController as! DataControllerInjectable).dataController = dataController
-                }
-            }
-        }
+    private var photoController = try! PhotoController()
+    
+    // MARK: - View Controllers
+    
+    private var dataBrowserViewController: DataBrowserTableViewController? {
+        viewControllers?
+            .compactMap { ($0 as? UINavigationController)?.viewControllers.first as? DataBrowserTableViewController }
+            .first
     }
     
-    private var photoController: PhotoController! {
-        didSet {
-            if let viewControllers = viewControllers {
-                for vc in viewControllers where vc.contentViewController is PhotoControllerInjectable {
-                    (vc.contentViewController as! PhotoControllerInjectable).photoController = photoController
-                }
-            }
-        }
-    }
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
-        dataController = try! DataController.init(managedObjectModuleName: "iSpy", persistentStoreType: NSSQLiteStoreType, managedObjectModuleBundle: .main)
-        
-        photoController = try! PhotoController()
+        dataBrowserViewController?.photoController = photoController
+        dataBrowserViewController?.users = dataController.users
     }
 }

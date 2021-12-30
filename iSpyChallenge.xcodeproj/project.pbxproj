@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E5D324E2778230B004D1516 /* Collection+iSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5D324D2778230B004D1516 /* Collection+iSpy.swift */; };
 		964DA683263A2EDB004D1B3B /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964DA682263A2EDB004D1B3B /* PhotoController.swift */; };
 		9660CD2F263B2D1E006B9352 /* transamerica_pyramid.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9660CD27263B2D1E006B9352 /* transamerica_pyramid.jpg */; };
 		9660CD30263B2D1E006B9352 /* moscone-center-west.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9660CD28263B2D1E006B9352 /* moscone-center-west.jpg */; };
@@ -27,14 +28,12 @@
 		96ABE8052640D0500045C456 /* ChallengeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ABE8042640D0500045C456 /* ChallengeResult.swift */; };
 		96ABE8082641CC890045C456 /* ChallengesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ABE8072641CC890045C456 /* ChallengesTableViewController.swift */; };
 		96ABE80B2641E62C0045C456 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ABE80A2641E62C0045C456 /* UserTableViewController.swift */; };
-		96C487E22643267E004D4D54 /* FetchedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C487E12643267E004D4D54 /* FetchedTableViewController.swift */; };
 		E0028788263A06EC00C65841 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0028787263A06EC00C65841 /* AppDelegate.swift */; };
 		E002878A263A06EC00C65841 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0028789263A06EC00C65841 /* SceneDelegate.swift */; };
 		E002878F263A06EC00C65841 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E002878D263A06EC00C65841 /* Main.storyboard */; };
 		E0028791263A06EC00C65841 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0028790263A06EC00C65841 /* Assets.xcassets */; };
 		E0028794263A06EC00C65841 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0028792263A06EC00C65841 /* LaunchScreen.storyboard */; };
 		E07E587B263C9EB10026F912 /* DataBrowserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E587A263C9EB10026F912 /* DataBrowserTableViewController.swift */; };
-		E07E587F263CAA760026F912 /* UIViewController+iSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07E587E263CAA760026F912 /* UIViewController+iSpy.swift */; };
 		E07E58852641E4310026F912 /* iSpy App - Code Challenge.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E07E58832641E4310026F912 /* iSpy App - Code Challenge.pdf */; };
 		E07E58862641E4310026F912 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = E07E58842641E4310026F912 /* ReadMe.md */; };
 		E07E588B2641E6F20026F912 /* NewChallenge.png in Resources */ = {isa = PBXBuildFile; fileRef = E07E58892641E6F20026F912 /* NewChallenge.png */; };
@@ -53,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E5D324D2778230B004D1516 /* Collection+iSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+iSpy.swift"; sourceTree = "<group>"; };
 		964DA682263A2EDB004D1B3B /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		9660CD27263B2D1E006B9352 /* transamerica_pyramid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = transamerica_pyramid.jpg; sourceTree = "<group>"; };
 		9660CD28263B2D1E006B9352 /* moscone-center-west.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "moscone-center-west.jpg"; sourceTree = "<group>"; };
@@ -73,7 +73,6 @@
 		96ABE8042640D0500045C456 /* ChallengeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeResult.swift; sourceTree = "<group>"; };
 		96ABE8072641CC890045C456 /* ChallengesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesTableViewController.swift; sourceTree = "<group>"; };
 		96ABE80A2641E62C0045C456 /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
-		96C487E12643267E004D4D54 /* FetchedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedTableViewController.swift; sourceTree = "<group>"; };
 		E0028784263A06EC00C65841 /* iSpyChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSpyChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0028787263A06EC00C65841 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0028789263A06EC00C65841 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +81,6 @@
 		E0028793263A06EC00C65841 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0028795263A06EC00C65841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E07E587A263C9EB10026F912 /* DataBrowserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBrowserTableViewController.swift; sourceTree = "<group>"; };
-		E07E587E263CAA760026F912 /* UIViewController+iSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+iSpy.swift"; sourceTree = "<group>"; };
 		E07E58832641E4310026F912 /* iSpy App - Code Challenge.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "iSpy App - Code Challenge.pdf"; sourceTree = "<group>"; };
 		E07E58842641E4310026F912 /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		E07E58892641E6F20026F912 /* NewChallenge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewChallenge.png; sourceTree = "<group>"; };
@@ -188,7 +186,7 @@
 		E07E587D263CAA570026F912 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E07E587E263CAA760026F912 /* UIViewController+iSpy.swift */,
+				3E5D324D2778230B004D1516 /* Collection+iSpy.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -216,7 +214,6 @@
 				968A15E2264227FD0017D10B /* Matches.storyboard */,
 				968A15EA2642285C0017D10B /* Challenges.storyboard */,
 				968A15E72642284A0017D10B /* Ratings.storyboard */,
-				96C487E12643267E004D4D54 /* FetchedTableViewController.swift */,
 				E07E587A263C9EB10026F912 /* DataBrowserTableViewController.swift */,
 				96ABE80A2641E62C0045C456 /* UserTableViewController.swift */,
 				96ABE8072641CC890045C456 /* ChallengesTableViewController.swift */,
@@ -338,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E5D324E2778230B004D1516 /* Collection+iSpy.swift in Sources */,
 				E089E9A5263A186C0054543D /* Challenge.swift in Sources */,
 				E0028788263A06EC00C65841 /* AppDelegate.swift in Sources */,
 				968A15D72642152A0017D10B /* MatchesTableViewController.swift in Sources */,
@@ -348,7 +346,6 @@
 				96ABE8022640CFF20045C456 /* UserResult.swift in Sources */,
 				E089E9A2263A17D20054543D /* User.swift in Sources */,
 				964DA683263A2EDB004D1B3B /* PhotoController.swift in Sources */,
-				E07E587F263CAA760026F912 /* UIViewController+iSpy.swift in Sources */,
 				E089E9AF263A1C710054543D /* DataController.swift in Sources */,
 				E089E9A8263A18DA0054543D /* Rating.swift in Sources */,
 				968A15DA264216C10017D10B /* RatingsTableViewController.swift in Sources */,
@@ -356,7 +353,6 @@
 				E089E997263A0DCA0054543D /* iSpy.xcdatamodeld in Sources */,
 				96ABE8052640D0500045C456 /* ChallengeResult.swift in Sources */,
 				96ABE80B2641E62C0045C456 /* UserTableViewController.swift in Sources */,
-				96C487E22643267E004D4D54 /* FetchedTableViewController.swift in Sources */,
 				E002878A263A06EC00C65841 /* SceneDelegate.swift in Sources */,
 				968A15E0264221100017D10B /* MatchTableViewController.swift in Sources */,
 				968A15DD264219800017D10B /* ChallengeTableViewController.swift in Sources */,

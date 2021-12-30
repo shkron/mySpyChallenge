@@ -57,8 +57,7 @@ struct UserViewModel {
     }
 }
 
-class UserTableViewController: UITableViewController, DataControllerInjectable, PhotoControllerInjectable, UserInjectable {
-    var dataController: DataController!
+class UserTableViewController: UITableViewController {
     var photoController: PhotoController!
     var user: User?
     var viewModel: UserViewModel?
@@ -73,17 +72,16 @@ class UserTableViewController: UITableViewController, DataControllerInjectable, 
     // MARK: - UITableViewDataSource & UITableViewDelegate
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel?.sections.count ?? 0
+        viewModel?.sections.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let section = viewModel?.sections[section]
-        return section?.rows.count ?? 0
+        viewModel?.sections[safe: section]?.rows.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section = viewModel?.sections[indexPath.section]
-        let row = section?.rows[indexPath.row]
+        let section = viewModel?.sections[safe: indexPath.section]
+        let row = section?.rows[safe: indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell")!
         cell.textLabel?.text = row?.title
@@ -100,13 +98,13 @@ class UserTableViewController: UITableViewController, DataControllerInjectable, 
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let section = viewModel?.sections[section]
-        return section?.type.rawValue
+        viewModel?.sections[safe: section]?.type.rawValue
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let section = viewModel?.sections[indexPath.section]
-        let row = section?.rows[indexPath.row]
+        let row = viewModel?
+            .sections[safe: indexPath.section]?
+            .rows[safe: indexPath.row]
         
         switch row?.type {
         case .challenges:
@@ -130,16 +128,18 @@ class UserTableViewController: UITableViewController, DataControllerInjectable, 
     // MARK: - Injection
     
     func injectProperties(viewController: UIViewController) {
-        if let vc = viewController as? DataControllerInjectable {
-            vc.dataController = self.dataController
+        if let vc = viewController as? ChallengesTableViewController {
+            vc.photoController = photoController
+            vc.challenges = user?.challenges.sorted(by: { $0.hint < $1.hint }) ?? []
         }
         
-        if let vc = viewController as? PhotoControllerInjectable {
-            vc.photoController = self.photoController
+        if let vc = viewController as? MatchesTableViewController {
+            vc.photoController = photoController
+            vc.matches = user?.matches.sorted(by: { !$0.verified || $1.verified }) ?? []
         }
         
-        if let vc = viewController as? UserInjectable {
-            vc.user = user
+        if let vc = viewController as? RatingsTableViewController {
+            vc.ratings = user?.ratings.sorted(by: { $0.stars < $1.stars }) ?? []
         }
     }
 }
