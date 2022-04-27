@@ -9,8 +9,21 @@ import UIKit
 import CoreData
 
 class MatchesTableViewController: UITableViewController {
-    var photoController: PhotoController!
-    var matches: [Match] = []
+    enum ListType {
+        case matchesForUser(userId: String)
+        case matchesForChallenge(challengeId: String)
+    }
+    
+    var dataController: DataController?
+    var listType: ListType?
+    
+    private var matches: [Match] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateUI()
+        registerForDataControllerNotifications()
+    }
     
     // MARK: - UITableViewDataSource & UITableViewDelegate
     
@@ -24,7 +37,7 @@ class MatchesTableViewController: UITableViewController {
         if let match = matches[safe: indexPath.row] {
             cell.textLabel?.text = "Match"
             cell.detailTextLabel?.text = String(format: "(%.5f, %.5f)", match.latitude, match.longitude)
-            cell.imageView?.image = photoController.photo(withName: match.photoHref)
+            cell.imageView?.image = UIImage(named: match.photoImageName)
         }
         
         return cell
@@ -45,8 +58,33 @@ class MatchesTableViewController: UITableViewController {
     
     func injectProperties(viewController: UIViewController) {
         if let vc = viewController as? MatchTableViewController {
-            vc.photoController = photoController
-            vc.match = matches[safe: tableView.indexPathForSelectedRow?.row]
+            vc.dataController = dataController
+            vc.matchId = matches[safe: tableView.indexPathForSelectedRow?.row]?.id
         }
+    }
+    
+    // MARK: Updating UI
+    
+    private func registerForDataControllerNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: .dataControllerDidUpdate, object: dataController)
+    }
+    
+    @objc private func updateUI() {
+        switch listType {
+        case .matchesForUser(let userId):
+            matches = dataController?
+                .matches(createdBy: userId) ?? []
+            
+        case .matchesForChallenge(let challengeId):
+            matches = dataController?
+                .allChallenges
+                .first(where: { $0.id == challengeId })?
+                .matches ?? []
+            
+        case nil:
+            break
+        }
+        
+        tableView.reloadData()
     }
 }

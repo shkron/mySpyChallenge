@@ -37,12 +37,12 @@ struct ChallengeSection {
 struct ChallengeViewModel {
     let sections: [ChallengeSection]
     
-    init(challenge: Challenge?) {
+    init(challenge: Challenge) {
         let attributeSection = ChallengeSection(type: .attributes, rows: [
-            ChallengeRow(type: .hint, title: challenge?.hint, detail: "hint"),
-            ChallengeRow(type: .latitude, title: String(format: "%.5f", challenge!.latitude), detail: "latitude"),
-            ChallengeRow(type: .longitude, title: String(format: "%.5f", challenge!.longitude), detail: "longitude"),
-            ChallengeRow(type: .photoHref, title: challenge?.photoHref, detail: "photoHref")
+            ChallengeRow(type: .hint, title: challenge.hint, detail: "hint"),
+            ChallengeRow(type: .latitude, title: String(format: "%.5f", challenge.latitude), detail: "latitude"),
+            ChallengeRow(type: .longitude, title: String(format: "%.5f", challenge.longitude), detail: "longitude"),
+            ChallengeRow(type: .photoHref, title: challenge.photoImageName, detail: "photoHref")
         ])
         
         let relationshipSection = ChallengeSection(type: .relationships, rows: [
@@ -56,17 +56,18 @@ struct ChallengeViewModel {
 }
 
 class ChallengeTableViewController: UITableViewController {
-    var photoController: PhotoController!
-    var challenge: Challenge?
-    var viewModel: ChallengeViewModel?
-
-    // MARK: - Lifecycle
+    var dataController: DataController?
+    var challengeId: String?
+    
+    private var challenge: Challenge?
+    private var viewModel: ChallengeViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = ChallengeViewModel(challenge: challenge)
+        updateUI()
+        registerForDataControllerNotifications()
     }
-
+    
     // MARK: - UITableViewDataSource & UITableViewDelegate
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -127,17 +128,45 @@ class ChallengeTableViewController: UITableViewController {
     
     func injectProperties(viewController: UIViewController) {
         if let vc = viewController as? UserTableViewController {
-            vc.photoController = photoController
-            vc.user = self.challenge?.creator
+            vc.dataController = dataController
+            
+            if let challenge = challenge {
+                vc.userId = dataController?.user(identifiedBy: challenge.creatorID)?.id
+            }
         }
         
         if let vc = viewController as? MatchesTableViewController {
-            vc.photoController = photoController
-            vc.matches = challenge?.matches.sorted(by: { !$0.verified || $1.verified }) ?? []
+            vc.dataController = dataController
+            
+            if let challenge = challenge {
+                vc.listType = .matchesForChallenge(challengeId: challenge.id)
+            }
         }
         
         if let vc = viewController as? RatingsTableViewController {
-            vc.ratings = challenge?.ratings.sorted(by: { $0.stars < $1.stars }) ?? []
+            vc.dataController = dataController
+            
+            if let challenge = challenge {
+                vc.listType = .ratingsForChallenge(challengeId: challenge.id)
+            }
         }
+    }
+    
+    // MARK: Updating UI
+    
+    private func registerForDataControllerNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: .dataControllerDidUpdate, object: dataController)
+    }
+    
+    @objc private func updateUI() {
+        challenge = dataController?
+            .allChallenges
+            .first(where: { $0.id == challengeId })
+        
+        if let challenge = challenge {
+            viewModel = ChallengeViewModel(challenge: challenge)
+        }
+        
+        tableView.reloadData()
     }
 }

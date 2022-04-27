@@ -7,8 +7,16 @@ import UIKit
 import CoreData
 
 class DataBrowserTableViewController: UITableViewController {
-    var photoController: PhotoController!
-    var users: [User] = []
+    var dataController: DataController?
+    
+    private var users: [User] = []
+    private let placeholder = UIImage(named: "placeholder")
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateUI()
+        registerForDataControllerNotifications()
+    }
     
     // MARK: - UITableViewDataSource & UITableViewDelegate
     
@@ -22,13 +30,11 @@ class DataBrowserTableViewController: UITableViewController {
         if let user = users[safe: indexPath.row] {
             cell.textLabel?.text = user.username
             cell.detailTextLabel?.text = user.email
-            
-            if let thumbnailURL = URL(string: user.avatarThumbnailHref),
-               let data = (try? Data(contentsOf: thumbnailURL)) ?? nil {
-                cell.imageView?.image = UIImage(data: data)
-            } else {
-                cell.imageView?.image = nil
-            }
+            cell.imageView?.contentMode = .scaleAspectFill
+            cell.imageView?.image = placeholder
+            user.avatarLargeURL?.loadedIntoImage(closure: { image in
+                cell.imageView?.image = image
+            })
         }
         
         return cell
@@ -47,10 +53,21 @@ class DataBrowserTableViewController: UITableViewController {
     
     // MARK: - Injection
     
-    func injectProperties(viewController: UIViewController) {
+    private func injectProperties(viewController: UIViewController) {
         if let vc = viewController as? UserTableViewController {
-            vc.photoController = photoController
-            vc.user = users[safe: tableView.indexPathForSelectedRow?.row]
+            vc.dataController = dataController
+            vc.userId = users[safe: tableView.indexPathForSelectedRow?.row]?.id
         }
+    }
+    
+    // MARK: Updating UI
+    
+    private func registerForDataControllerNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: .dataControllerDidUpdate, object: dataController)
+    }
+    
+    @objc private func updateUI() {
+        users = dataController?.allUsers ?? []
+        tableView.reloadData()
     }
 }

@@ -8,8 +8,16 @@ import UIKit
 import CoreData
 
 class ChallengesTableViewController: UITableViewController {
-    var photoController: PhotoController!
-    var challenges: [Challenge] = []
+    var dataController: DataController?
+    var userId: String?
+    
+    private var challenges: [Challenge] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateUI()
+        registerForDataControllerNotifications()
+    }
     
     // MARK: - UITableViewDataSource & UITableViewDelegate
     
@@ -23,7 +31,7 @@ class ChallengesTableViewController: UITableViewController {
         if let challenge = challenges[safe: indexPath.row] {
             cell.textLabel?.text = challenge.hint
             cell.detailTextLabel?.text = String(format: "(%.5f, %.5f)", challenge.latitude, challenge.longitude)
-            cell.imageView?.image = photoController.photo(withName: challenge.photoHref)
+            cell.imageView?.image = UIImage(named: challenge.photoImageName)
         }
         
         return cell
@@ -44,8 +52,23 @@ class ChallengesTableViewController: UITableViewController {
     
     func injectProperties(viewController: UIViewController) {
         if let vc = viewController as? ChallengeTableViewController {
-            vc.photoController = photoController
-            vc.challenge = challenges[safe: tableView.indexPathForSelectedRow?.row]
+            vc.dataController = dataController
+            vc.challengeId = challenges[safe: tableView.indexPathForSelectedRow?.row]?.id
         }
+    }
+    
+    // MARK: Updating UI
+    
+    private func registerForDataControllerNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: .dataControllerDidUpdate, object: dataController)
+    }
+    
+    @objc private func updateUI() {
+        challenges = dataController?
+            .allUsers
+            .first(where: { $0.id == userId })?
+            .challenges ?? []
+        
+        tableView.reloadData()
     }
 }
