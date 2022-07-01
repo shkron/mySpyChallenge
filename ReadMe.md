@@ -1,6 +1,6 @@
 # iSpyChallenge
 
-This repository contains an Android Studio project that is used as a starting point for the iSpy App Tech challenge.
+This repository contains an xCode project that is used as a starting point for the iSpy App Tech challenge.
 
 ## Challenge
 
