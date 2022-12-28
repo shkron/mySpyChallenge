@@ -56,6 +56,7 @@
 		E089E988263A0C480054543D /* NewChallenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E089E986263A0C480054543D /* NewChallenge.storyboard */; };
 		E089E98C263A0C630054543D /* NearMe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E089E98B263A0C630054543D /* NearMe.storyboard */; };
 		E089E991263A0C8E0054543D /* DataBrowser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E089E98F263A0C8E0054543D /* DataBrowser.storyboard */; };
+		FA6E7E43295BB616001BA4BB /* NearMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E7E42295BB616001BA4BB /* NearMeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 		E089E987263A0C480054543D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iSpyChallenge/Base.lproj/NewChallenge.storyboard; sourceTree = "<group>"; };
 		E089E98B263A0C630054543D /* NearMe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NearMe.storyboard; sourceTree = "<group>"; };
 		E089E990263A0C8E0054543D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = iSpyChallenge/Base.lproj/DataBrowser.storyboard; sourceTree = "<group>"; };
+		FA6E7E42295BB616001BA4BB /* NearMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				E089E98B263A0C630054543D /* NearMe.storyboard */,
+				FA6E7E42295BB616001BA4BB /* NearMeViewController.swift */,
 			);
 			path = "Near Me";
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				E07E587B263C9EB10026F912 /* DataBrowserTableViewController.swift in Sources */,
 				3E5D325A277A96AE004D1516 /* APIMatch.swift in Sources */,
 				3E5D3268277A9B8D004D1516 /* Rating+iSpy.swift in Sources */,
+				FA6E7E43295BB616001BA4BB /* NearMeViewController.swift in Sources */,
 				3E5D3258277A96A0004D1516 /* APIChallenge.swift in Sources */,
 				3E5D3276277D879D004D1516 /* RatingAndAssociatedUser.swift in Sources */,
 				3E5D325E277A96D4004D1516 /* APILocation.swift in Sources */,
