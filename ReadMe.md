@@ -40,17 +40,17 @@ The following screenshots are what the current implementation of the application
 
 <kbd><img src="ReadMe_Assets/Location_AuthorizationRequest.png" alt="Location Authorization Request" width="240"/>
 
-<kbd><img src="NearMeTab_WithNewChallenge.png" alt="Near Me With Newly Created Challenge" width="240"/>
+<kbd><img src="ReadMe_Assets/NearMeTab_WithNewChallenge.png" alt="Near Me With Newly Created Challenge" width="240"/>
 
-<kbd><img src="NearMeTab_UpdatedDistance.png" alt="Near Me With Updated Distance" width="240"/>
+<kbd><img src="ReadMe_Assets/NearMeTab_UpdatedDistance.png" alt="Near Me With Updated Distance" width="240"/>
 
-<kbd><img src="NewChallengeDetailView.png" alt="Challenge Detail View" width="240"/>
+<kbd><img src="ReadMe_Assets/NewChallengeDetailView.png" alt="Challenge Detail View" width="240"/>
 
-<kbd><img src="NewChallengeTab.png" alt="New Challenge Tab" width="240"/>
+<kbd><img src="ReadMe_Assets/NewChallengeTab.png" alt="New Challenge Tab" width="240"/>
 
-<kbd><img src="CreateNewChallenge.png" alt="Create New Challenge" width="240"/>
+<kbd><img src="ReadMe_Assets/CreateNewChallenge.png" alt="Create New Challenge" width="240"/>
 
-<kbd><img src="ImagePicker.png" alt="Image Picker" width="240"/>
+<kbd><img src="ReadMe_Assets/ImagePicker.png" alt="Image Picker" width="240"/>
 
 <kbd><img src="DataBrowser.png" alt="Data Browser" width="240"/>
 
