@@ -38,7 +38,7 @@ Access to the sample data is provided via the DataController class. You will nee
 
 The following screenshots are what the current implementation of the application looks like.
 
-<kbd><img src="Location_AuthorizationRequest.png" alt="Location Authorization Request" width="240"/>
+<kbd><img src="ReadMe_Assets/Location_AuthorizationRequest.png" alt="Location Authorization Request" width="240"/>
 
 <kbd><img src="NearMeTab_WithNewChallenge.png" alt="Near Me With Newly Created Challenge" width="240"/>
 
