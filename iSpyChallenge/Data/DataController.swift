@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import Combine
 
 extension NSNotification.Name {
     /// Indicates that a `DataController` instance updated its data.
@@ -14,6 +15,7 @@ extension NSNotification.Name {
 
 class DataController {
     private let apiService: APIService
+    private var cancellable: AnyCancellable?
     
     private(set) var allUsers: [User] = [] {
         didSet {
@@ -26,6 +28,9 @@ class DataController {
     
     init(apiService: APIService) {
         self.apiService = apiService
+        cancellable = LocationManager.shared.$currentLocation.sink { [weak self] _ in
+                        self?.loadAllData()
+                      }
     }
     
     var currentUser: User? {
@@ -53,6 +58,9 @@ class DataController {
             dispatchGroup.wait()
             DispatchQueue.main.async {
                 self.allUsers = apiUsers.map { User(apiUser: $0, apiChallenges: apiChallenges) }
+                if self.allUsers.count > 0 {
+                   CoreDataManager.shared.insert(users: self.allUsers)
+               }
             }
         }
     }

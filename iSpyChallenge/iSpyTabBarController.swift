@@ -13,6 +13,7 @@ class iSpyTabBarController: UITabBarController {
         super.viewDidLoad()
         
         nearMeViewController?.dataController = dataController
+        newChallengeViewController?.dataController = dataController
         dataBrowserViewController?.dataController = dataController
         
         dataController.loadAllData()
@@ -23,6 +24,12 @@ private extension iSpyTabBarController {
     var nearMeViewController: NearMeViewController? {
         viewControllers?
             .compactMap { ($0 as? UINavigationController)?.viewControllers.first as? NearMeViewController }
+            .first
+    }
+    
+    var newChallengeViewController: NewChallengeViewController? {
+        viewControllers?
+            .compactMap { ($0 as? UINavigationController)?.viewControllers.first as? NewChallengeViewController }
             .first
     }
     

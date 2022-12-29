@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OMh-4b-EAq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OMh-4b-EAq">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,32 +12,143 @@
         <!--New Challenge-->
         <scene sceneID="lRq-BZ-e2H">
             <objects>
-                <viewController id="OMh-4b-EAq" sceneMemberID="viewController">
+                <viewController id="OMh-4b-EAq" customClass="NewChallengeViewController" customModule="iSpyChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ccn-6n-j0z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder for Creating a New Challenge" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coj-De-jzq">
-                                <rect key="frame" x="24" y="331" width="327" height="49"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afO-iL-1cg">
+                                <rect key="frame" x="179.5" y="323" width="16" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oj8-gF-qVG">
+                                <rect key="frame" x="87.5" y="360" width="200" height="44"/>
+                                <accessibility key="accessibilityConfiguration" label="Choose Photo"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="jDT-F0-xc1"/>
+                                    <constraint firstAttribute="width" constant="200" id="rbG-Lq-pxR"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Choose Photo"/>
+                                <connections>
+                                    <action selector="choosePhotoButtonTapped:" destination="OMh-4b-EAq" eventType="touchUpInside" id="AUB-d8-yv0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lE-jO-9EU">
+                                <rect key="frame" x="87.5" y="263" width="200" height="44"/>
+                                <accessibility key="accessibilityConfiguration" label="Take Photo"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="7QG-LI-Gfh"/>
+                                    <constraint firstAttribute="height" constant="44" id="EvY-Rv-91z"/>
+                                </constraints>
+                                <buttonConfiguration key="configuration" style="gray" title="Take Photo"/>
+                                <connections>
+                                    <action selector="takePhotoButtonTapped:" destination="OMh-4b-EAq" eventType="touchUpInside" id="jzZ-wz-oY6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rFB-WP-gOo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rFB-WP-gOo" firstAttribute="trailing" secondItem="coj-De-jzq" secondAttribute="trailing" constant="24" id="DPL-K9-wQk"/>
-                            <constraint firstItem="coj-De-jzq" firstAttribute="leading" secondItem="rFB-WP-gOo" secondAttribute="leading" constant="24" id="POk-pa-ana"/>
-                            <constraint firstItem="coj-De-jzq" firstAttribute="centerY" secondItem="rFB-WP-gOo" secondAttribute="centerY" id="owE-66-bUp"/>
+                            <constraint firstItem="afO-iL-1cg" firstAttribute="top" secondItem="0lE-jO-9EU" secondAttribute="bottom" constant="16" id="0Im-p8-Wew"/>
+                            <constraint firstItem="afO-iL-1cg" firstAttribute="centerX" secondItem="Ccn-6n-j0z" secondAttribute="centerX" id="bDy-8m-ubZ"/>
+                            <constraint firstItem="afO-iL-1cg" firstAttribute="centerY" secondItem="Ccn-6n-j0z" secondAttribute="centerY" id="epo-fC-Vgr"/>
+                            <constraint firstItem="0lE-jO-9EU" firstAttribute="centerX" secondItem="Ccn-6n-j0z" secondAttribute="centerX" id="idD-7a-Z33"/>
+                            <constraint firstItem="oj8-gF-qVG" firstAttribute="top" secondItem="afO-iL-1cg" secondAttribute="bottom" constant="16" id="nyk-Ui-Euw"/>
+                            <constraint firstItem="oj8-gF-qVG" firstAttribute="centerX" secondItem="Ccn-6n-j0z" secondAttribute="centerX" id="o4X-Sh-23u"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Challenge" id="uxc-sE-xwn"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="choosePhotoButton" destination="oj8-gF-qVG" id="mcF-qE-9dY"/>
+                        <outlet property="separatorLabel" destination="afO-iL-1cg" id="acT-rO-CRk"/>
+                        <outlet property="takePhotoButton" destination="0lE-jO-9EU" id="5JK-xt-VM0"/>
+                        <segue destination="U3w-ly-xlk" kind="show" identifier="CreateNewChallenge" id="y00-GC-U9W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wE-t3-LXr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-351" y="1665"/>
+        </scene>
+        <!--Create New Challenge View Controller-->
+        <scene sceneID="LLg-8U-QQE">
+            <objects>
+                <viewController id="U3w-ly-xlk" customClass="CreateNewChallengeViewController" customModule="iSpyChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v9f-ai-prB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tNk-9O-OXA">
+                                <rect key="frame" x="16" y="60" width="343" height="434"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="9AT-60-7i6">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DND-xf-bcU">
+                                <rect key="frame" x="16" y="607" width="343" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Imi-da-0VB"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Submit"/>
+                                <connections>
+                                    <action selector="didTapSubmit:" destination="U3w-ly-xlk" eventType="touchUpInside" id="ddk-an-YFf"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter hint" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m4s-dF-ZzY">
+                                <rect key="frame" x="16" y="547" width="343" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="enG-8i-xE5"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="mwl-5I-9zf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSA-iq-ZsF">
+                                <rect key="frame" x="16" y="510" width="48" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="OlK-67-vgQ"/>
+                                    <constraint firstAttribute="height" constant="21" id="e01-QC-nJx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bcD-Ps-WCh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tNk-9O-OXA" firstAttribute="top" secondItem="bcD-Ps-WCh" secondAttribute="top" constant="16" id="6ey-8l-duX"/>
+                            <constraint firstItem="DND-xf-bcU" firstAttribute="top" secondItem="m4s-dF-ZzY" secondAttribute="bottom" constant="16" id="73Z-RE-f7r"/>
+                            <constraint firstItem="m4s-dF-ZzY" firstAttribute="leading" secondItem="bcD-Ps-WCh" secondAttribute="leading" constant="16" id="9p3-Gl-Cfm"/>
+                            <constraint firstItem="eSA-iq-ZsF" firstAttribute="top" secondItem="tNk-9O-OXA" secondAttribute="bottom" constant="16" id="F4d-l1-YwU"/>
+                            <constraint firstItem="bcD-Ps-WCh" firstAttribute="bottom" secondItem="DND-xf-bcU" secondAttribute="bottom" constant="16" id="GNG-B2-k9n"/>
+                            <constraint firstItem="bcD-Ps-WCh" firstAttribute="trailing" secondItem="tNk-9O-OXA" secondAttribute="trailing" constant="16" id="J0t-Ew-p7F"/>
+                            <constraint firstItem="eSA-iq-ZsF" firstAttribute="leading" secondItem="bcD-Ps-WCh" secondAttribute="leading" constant="16" id="Ryh-iC-Oed"/>
+                            <constraint firstItem="m4s-dF-ZzY" firstAttribute="top" secondItem="eSA-iq-ZsF" secondAttribute="bottom" constant="16" id="Z66-uV-apf"/>
+                            <constraint firstItem="9AT-60-7i6" firstAttribute="centerX" secondItem="v9f-ai-prB" secondAttribute="centerX" id="ZLC-vv-5Mz"/>
+                            <constraint firstItem="bcD-Ps-WCh" firstAttribute="trailing" secondItem="m4s-dF-ZzY" secondAttribute="trailing" constant="16" id="a3e-cI-usr"/>
+                            <constraint firstItem="DND-xf-bcU" firstAttribute="leading" secondItem="bcD-Ps-WCh" secondAttribute="leading" constant="16" id="hCt-kT-Tcx"/>
+                            <constraint firstItem="bcD-Ps-WCh" firstAttribute="trailing" secondItem="DND-xf-bcU" secondAttribute="trailing" constant="16" id="l5V-vm-g8w"/>
+                            <constraint firstItem="tNk-9O-OXA" firstAttribute="leading" secondItem="bcD-Ps-WCh" secondAttribute="leading" constant="16" id="nKz-nr-38b"/>
+                            <constraint firstItem="9AT-60-7i6" firstAttribute="centerY" secondItem="v9f-ai-prB" secondAttribute="centerY" id="wbW-H6-euf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zjC-jN-3hs"/>
+                    <connections>
+                        <outlet property="hintLabel" destination="eSA-iq-ZsF" id="twH-Qc-AKS"/>
+                        <outlet property="hintTextField" destination="m4s-dF-ZzY" id="VOU-fi-IiA"/>
+                        <outlet property="imageView" destination="tNk-9O-OXA" id="84S-nd-FO0"/>
+                        <outlet property="loadingSpinner" destination="9AT-60-7i6" id="zsE-dq-fuB"/>
+                        <outlet property="submitButton" destination="DND-xf-bcU" id="O1I-uH-AJS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P1f-Ok-BIY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="434" y="1665"/>
         </scene>
     </scenes>
     <resources>

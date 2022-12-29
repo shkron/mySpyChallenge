@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct Challenge: Codable, Hashable {
     var id: String
@@ -15,4 +16,10 @@ struct Challenge: Codable, Hashable {
     var creatorID: String
     var matches: [Match] = []
     var ratings: [Rating] = []
+}
+
+extension Challenge {
+    func getLocation() -> CLLocation {
+        CLLocation(latitude: latitude, longitude: longitude)
+    }
 }
