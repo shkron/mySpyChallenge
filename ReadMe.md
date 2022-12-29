@@ -10,8 +10,8 @@ The concept for the app is a global game of "I Spy" where users can take picture
 
 The application contains 3 tabs:
 
-* Near Me: Placeholder for your work
-* New Challenge: Placeholder for your work
+* Near Me: Challenges ordered by the distance to the user
+* New Challenge: Create New Challenge flow
 * Data Browser: Tab to allow you to explore the data included in the project.
 
 If any questions/concerns come up during the challenge, please feel free to reach out to your interview to get answers/clarifications.
@@ -28,11 +28,6 @@ $ git remote add origin https://github.com/[username]/mySpyChallenge.git
 $ git push -u origin main
 ````
 
-## Submit Process
-
-Once you have completed your challenge, we ask that you commit your changes to your main branch and push them up to remote origin. Then please provide the hiring manager or your interviewer a link to your project so we can then download the ZIP for reviewing/archiving. We appreciate and thank you for taking the time to take our challenge.
- 
-
 ## Xcode Project Overview
 
 The model objects for the app are provided, along with some sample data for use during the exercise.  All data is maintained in memory and is loaded from sample JSON files, via a mock API service, when the app launches.
@@ -41,10 +36,21 @@ Access to the sample data is provided via the DataController class. You will nee
 
 ## Screen Shots
 
-The following screenshots are what the initial implementation of the application looks like.
+The following screenshots are what the current implementation of the application looks like.
 
-<kbd><img src="NewChallenge.png" alt="New Challenge" width="240"/>
+<kbd><img src="Location_AuthorizationRequest.png" alt="Location Authorization Request" width="240"/>
 
-<kbd><img src="NearMe.png" alt="Near Me" width="240"/>
+<kbd><img src="NearMeTab_WithNewChallenge.png" alt="Near Me With Newly Created Challenge" width="240"/>
+
+<kbd><img src="NearMeTab_UpdatedDistance.png" alt="Near Me With Updated Distance" width="240"/>
+
+<kbd><img src="NewChallengeDetailView.png" alt="Challenge Detail View" width="240"/>
+
+<kbd><img src="NewChallengeTab.png" alt="New Challenge Tab" width="240"/>
+
+<kbd><img src="CreateNewChallenge.png" alt="Create New Challenge" width="240"/>
+
+<kbd><img src="ImagePicker.png" alt="Image Picker" width="240"/>
 
 <kbd><img src="DataBrowser.png" alt="Data Browser" width="240"/>
+
