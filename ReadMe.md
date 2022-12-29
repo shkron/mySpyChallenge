@@ -38,19 +38,19 @@ Access to the sample data is provided via the DataController class. You will nee
 
 The following screenshots are what the current implementation of the application looks like.
 
-<kbd><img src="ReadMe_Assets/Location_AuthorizationRequest.png" alt="Location Authorization Request" width="240"/>
+<kbd><img src="ReadMe_Assets/Location_AuthorizationRequest.png" alt="Location Authorization Request" width="320"/>
 
-<kbd><img src="ReadMe_Assets/NearMeTab_WithNewChallenge.png" alt="Near Me With Newly Created Challenge" width="240"/>
+<kbd><img src="ReadMe_Assets/NearMeTab_WithNewChallenge.png" alt="Near Me With Newly Created Challenge" width="320"/>
 
-<kbd><img src="ReadMe_Assets/NearMeTab_UpdatedDistance.png" alt="Near Me With Updated Distance" width="240"/>
+<kbd><img src="ReadMe_Assets/NearMeTab_UpdatedDistance.png" alt="Near Me With Updated Distance" width="320"/>
 
-<kbd><img src="ReadMe_Assets/NewChallengeDetailView.png" alt="Challenge Detail View" width="240"/>
+<kbd><img src="ReadMe_Assets/NewChallengeDetailView.png" alt="Challenge Detail View" width="320"/>
 
-<kbd><img src="ReadMe_Assets/NewChallengeTab.png" alt="New Challenge Tab" width="240"/>
+<kbd><img src="ReadMe_Assets/NewChallengeTab.png" alt="New Challenge Tab" width="320"/>
 
-<kbd><img src="ReadMe_Assets/CreateNewChallenge.png" alt="Create New Challenge" width="240"/>
+<kbd><img src="ReadMe_Assets/ImagePicker.png" alt="Image Picker" width="320"/>
 
-<kbd><img src="ReadMe_Assets/ImagePicker.png" alt="Image Picker" width="240"/>
+<kbd><img src="ReadMe_Assets/CreateNewChallenge.png" alt="Create New Challenge" width="320"/>
 
-<kbd><img src="DataBrowser.png" alt="Data Browser" width="240"/>
+<kbd><img src="DataBrowser.png" alt="Data Browser" width="320"/>
 
